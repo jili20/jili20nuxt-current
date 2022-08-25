@@ -1,0 +1,291 @@
+html {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, Microsoft YaHei, serif;
+  font-size: 18px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, Microsoft YaHei, serif;
+  line-height: 1.5;
+  text-align: left;
+  background-color: #fff;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ================ 自定义样式 ====================== */
+/* 文章详情-文章编辑器 a 标题样式 */
+.article-content .content a {
+  color: #186ec2;
+}
+
+.article-content .content a:hover {
+  text-decoration: underline;
+}
+
+/* 分页器居中 */
+.el-pagination {
+  text-align: center;
+}
+
+
+/* md */
+@media screen and (min-width: 960px) {
+
+  .md-hidden {
+    display: none;
+  }
+
+  /* md 分页器 - 激活时背景颜色 */
+  .el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: black;
+  }
+
+  /* 文章内容图片 */
+  .article-content .content img {
+    margin: 20px 10px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* sm */
+@media screen and (max-width: 960px) {
+
+  .sm-hidden {
+    display: none;
+  }
+
+  /* 确认提示弹框 */
+  .el-message-box {
+    width: 350px;
+    margin: 0 auto;
+  }
+
+  /* 文章内容图片 */
+  .article-content .content img {
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  }
+
+}
+
+.line-top {
+  clear: both;
+}
+
+/* 公共样式 - 去浮动 */
+.line {
+  width: 100%;
+  height: 20px;
+  margin: 0 auto;
+  background-color: #242424;
+}
+
+/* 底部清除浮动线 */
+.line-bottom {
+  height: 26px;
+  width: 100%;
+  clear: both;
+}
+
+/* 首页-中间内容、则边栏、卡片背景颜色 */
+.section, .aside, .el-card {
+  background-color: #FFFFFF;
+}
+
+/* 修改则边栏标题背景样式 */
+.el-divider__text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 修改 轮播图 指示图*/
+.el-carousel__button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* el-dialog 对话框 */
+.el-dialog {
+  border-radius: 4px;
+}
+
+.el-button--primary:hover {
+  background-color: black;
+}
+
+/* 除首页-公共样式  */
+/* 选项卡标题字体加大 */
+.el-tabs__item {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 文章详情 - 一级留言输入框 */
+.el-textarea__inner {
+  background-color: #242424;
+  color: white;
+}
+
+/* 右则小轮播图背景颜色 */
+.article-container .aside .el-carousel[data-v-a30a8e90], .article-container .container-in .aside[data-v-a30a8e90] {
+  border-radius: 4px;
+}
+
+.fs18 {
+  font-size: 18px;
+}
+
+.fs16 {
+  font-size: 16px;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.iconfont, .el-icon-star-off {
+  cursor: pointer;
+}
+
+.icon-payment:hover, .icon-zengbi:hover, .el-icon-chat-dot-round:hover, .el-icon-view:hover, .el-icon-edit-outline:hover {
+  text-decoration: none;
+}
+
+/* 全局过渡动画 */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+/* 编辑器样式 */
+pre {
+  background-color: #303133;
+  color: #d9ecff;
+  font-size: 16px;
+  overflow-x: auto;
+  padding: 14px 0;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+/* 编辑器样式 */
+code {
+  background-color: #303133;
+  color: #d9ecff;
+  font-size: 18px;
+  overflow-x: auto;
+  padding: 14px 20px;
+  margin: 10px 0;
+  border-radius: 5px !important;
+}
+
+/* 编辑器样式 */
+table {
+  overflow: auto;
+  margin: 0;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* 编辑器样式 */
+td, th {
+  font-size: 14px;
+  display: table-cell;
+  border-top: 1px dashed #ebeef5;
+  border-bottom: 1px dashed #ebeef5;
+  box-sizing: border-box;
+  min-width: 1em;
+  padding: 0 5px;
+  position: relative;
+  vertical-align: top;
+}
+
+/* 编辑器样式 */
+hr {
+  background-color: #d2d2d5;
+  height: 1px;
+  border: none;
+}
