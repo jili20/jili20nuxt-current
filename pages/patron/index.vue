@@ -76,7 +76,7 @@
         <!-- 子组件-轮播图 -->
         <Looper v-bind:looperListRight="looperListRight"/>
         <!-- 子组件 - 投放诗语 -->
-        <Patron v-bind:oneTop="oneTop" :isOpenPatron="isOpenPatron"
+        <Patron :isOpenPatron="isOpenPatron"
                 :addPatronData="addPatronData" @addPatron="addPatron" @openPatron="openPatron"
                 @handleClosePatron="handleClosePatron"/>
       </template>
@@ -138,9 +138,6 @@ export default {
     // 轮播图 - 右边栏
     const {data: looperRight} = await app.$getPatronRightLooperList()
     const looperListRight = looperRight.looperListRight
-    // 投放诗语-右则栏列表
-    const {data: one} = await app.$getOneTop()
-    const oneTop = one.oneTop
     return {
       userId,
       current,
@@ -150,8 +147,7 @@ export default {
       list,
       randomTip,
       recommendArticleList,
-      looperListRight,
-      oneTop
+      looperListRight
     }
   },
   data() {

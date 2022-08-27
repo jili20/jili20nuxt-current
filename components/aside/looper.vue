@@ -6,10 +6,10 @@
         <el-divider content-position="center">{{ item.title }}</el-divider>
         <div>
           <a :href="item.looperLink" v-if="item.looperLink">
-            <img class="carousel-img" :src="item.looperUrl" alt="" lazy>
+            <img class="carousel-img" :src="item.looperUrl" alt="">
           </a>
           <a :href="'/user/'+item.userId" v-else>
-            <img class="carousel-img" :src="item.looperUrl" alt="" lazy>
+            <img class="carousel-img" :src="item.looperUrl" alt="">
           </a>
         </div>
       </el-carousel-item>

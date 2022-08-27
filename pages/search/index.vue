@@ -110,7 +110,7 @@
         <!-- 子组件-轮播图 -->
         <Looper v-bind:looperListRight="looperListRight"/>
         <!-- 子组件 - 投放诗语 -->
-        <Patron v-bind:oneTop="oneTop" :isOpenPatron="isOpenPatron"
+        <Patron :isOpenPatron="isOpenPatron"
                 :addPatronData="addPatronData" @addPatron="addPatron" @openPatron="openPatron"
                 @handleClosePatron="handleClosePatron"/>
         <!-- /右则边栏 结束 -->
@@ -158,9 +158,6 @@ export default {
     // 随机诗语
     const {data: aphorism} = await app.$getRandomTip()
     const randomTip = aphorism.randomTip
-    // 投放诗语-右则栏列表
-    const {data: one} = await app.$getOneTop()
-    const oneTop = one.oneTop
     // 动态获取轮播图背景图片
     // const {data: one} = await app.$getBackgroundOne()
     // const loopBackgroundImage = one.url

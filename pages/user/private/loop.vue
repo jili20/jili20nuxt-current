@@ -32,7 +32,7 @@
                 <div class="content-box">
                   <div>
                     <nuxt-link :to="'/user/'+item.userId">
-                      <p>投放诗语人：{{ item.username }}</p>
+                      <p>投放诗语者：{{ item.username }}</p>
                     </nuxt-link>
                     <a :href="item.looperLink"><p>图片标题： {{ item.title }}</p></a>
                     <!-- (0 首页轮播图；1 首页右则；2 帖子正文下)  -->

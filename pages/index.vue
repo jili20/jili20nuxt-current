@@ -6,16 +6,18 @@
     <el-carousel>
       <!-- <el-carousel :style="{backgroundImage: 'url(' + loopBackgroundImage + ')'}">-->
       <el-carousel>
-        <el-carousel-item v-for="item in looperListTop" :key="item.id">
-          <div>
-            <nuxt-link :to="item.looperLink" v-if="item.looperLink">
-              <img :src="item.looperUrl" alt="" lazy>
-            </nuxt-link>
-            <nuxt-link :to="'/user/'+item.userId" v-else>
-              <img :src="item.looperUrl" alt="">
-            </nuxt-link>
-          </div>
-        </el-carousel-item>
+        <div v-for="item in looperListTop" :key="item.id">
+          <el-carousel-item>
+            <div>
+              <nuxt-link :to="item.looperLink" v-if="item.looperLink">
+                <img :src="item.looperUrl" alt="">
+              </nuxt-link>
+              <nuxt-link :to="'/user/'+item.userId" v-else>
+                <img :src="item.looperUrl" alt="">
+              </nuxt-link>
+            </div>
+          </el-carousel-item>
+        </div>
       </el-carousel>
     </el-carousel>
     <!-- /轮播图 结束 -->
@@ -194,7 +196,7 @@
         <!-- 子组件-轮播图 -->
         <Looper v-bind:looperListRight="looperListRight"/>
         <!-- 子组件 - 改为随机诗语 -->
-        <Patron v-bind:oneTop="oneTop" :isOpenPatron="isOpenPatron"
+        <Patron :isOpenPatron="isOpenPatron"
                 :addPatronData="addPatronData" @addPatron="addPatron" @openPatron="openPatron"
                 @handleClosePatron="handleClosePatron"/>
       </template>
@@ -262,7 +264,6 @@ export default {
         categoryChildren = categoryList[i].children
       }
     }
-
     // 轮播图 - 首页顶部
     const {data: looper} = await app.$getTopLooperList()
     const looperListTop = looper.looperListTop
@@ -275,9 +276,6 @@ export default {
     // 随机诗语
     const {data: aphorism} = await app.$getRandomTip()
     const randomTip = aphorism.randomTip
-    // 获取1元投放诗语人列表
-    const {data: one} = await app.$getOneTop()
-    const oneTop = one.oneTop
     // 查询最新一条系统公告
     const {data: announcement} = await app.$getAnnouncementOne()
     const ann = announcement.content
@@ -287,7 +285,6 @@ export default {
 
     return {
       // loopBackgroundImage,
-      oneTop,
       ann,
       current,
       size,
@@ -765,6 +762,7 @@ export default {
         justify-content: center;
 
         img {
+          width: 100%;
           height: 300px;
           text-align: center;
           border-radius: 4px;
@@ -874,15 +872,14 @@ export default {
       clear: both;
       height: 310px;
       width: 100%;
-      background: url("~@/assets/img/background/a.jpeg") no-repeat 0 0;
+      background: url("~@/assets/img/background/1.gif") no-repeat 0 0;
       background-size: 100% 100%;
 
       div {
 
         img {
-          //height: 300px !important;
-          height: 100%;
-          //width: 100% !important;
+          width: 100%;
+          height: 100% !important;
           text-align: center;
           border-radius: 4px;
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);

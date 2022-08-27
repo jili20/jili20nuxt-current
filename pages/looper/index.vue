@@ -24,8 +24,7 @@
               <b>投放轮播图片的方式：</b>
               <ul>
                 <li>1、将资料发送至电子邮箱 908866805@qq.com，标题为《投放轮播图片》；</li>
-                <li>2、添加QQ或微信：908866805 提交；</li>
-                <li>3、添加QQ群：572844626 提交；</li>
+                <li>2、添加编辑的QQ或微信：908866805 提交；</li>
               </ul>
               <br>
               <p>各个位置的轮播器，自动播放前5张最新图片。您可以点击查看 <a href="/looper/all" title="所有投放的轮播图片"><b>所有投放的轮播图片</b></a></p>
@@ -97,24 +96,24 @@
         <!-- 子组件-轮播图 -->
         <Looper v-bind:looperListRight="looperListRight"/>
         <!-- 子组件 - 投放诗语 -->
-        <Patron v-bind:oneTop="oneTop" :isOpenPatron="isOpenPatron"
+        <Patron :isOpenPatron="isOpenPatron"
                 :addPatronData="addPatronData" @addPatron="addPatron" @openPatron="openPatron"
                 @handleClosePatron="handleClosePatron"/>
         <!-- 轮播图Top15 -->
-        <div class="aside">
-          <el-divider>轮播图</el-divider>
-          <ul>
-            <li v-for="item in loopTop15">
-              <el-image
-                class="img"
-                :src="item.looperUrl"
-                :preview-src-list="[item.looperUrl]" lazy>
-              </el-image>
-              <nuxt-link :to="item.looperLink" v-if="item.looperLink">{{ item.title }}</nuxt-link>
-              <nuxt-link :to="'/user/'+item.userId" v-else>{{ item.title }}</nuxt-link>
-            </li>
-          </ul>
-        </div>
+        <!--        <div class="aside">-->
+        <!--          <el-divider>轮播图</el-divider>-->
+        <!--          <ul>-->
+        <!--            <li v-for="item in loopTop15">-->
+        <!--              <el-image-->
+        <!--                class="img"-->
+        <!--                :src="item.looperUrl"-->
+        <!--                :preview-src-list="[item.looperUrl]" lazy>-->
+        <!--              </el-image>-->
+        <!--              <nuxt-link :to="item.looperLink" v-if="item.looperLink">{{ item.title }}</nuxt-link>-->
+        <!--              <nuxt-link :to="'/user/'+item.userId" v-else>{{ item.title }}</nuxt-link>-->
+        <!--            </li>-->
+        <!--          </ul>-->
+        <!--        </div>-->
       </template>
       <!-- /右则边栏 结束 -->
     </div>
@@ -156,19 +155,15 @@ export default {
     // 轮播图 - 右边栏
     const {data: looperRight} = await app.$getPatronRightLooperList()
     const looperListRight = looperRight.looperListRight
-    // 投放诗语-右则栏列表
-    const {data: one} = await app.$getOneTop()
-    const oneTop = one.oneTop
     // 最新前15条轮播图信息
-    const {data: looper} = await app.$getLooperTop15List()
-    const loopTop15 = looper.looperTop15List
+    // const {data: looper} = await app.$getLooperTop15List()
+    // const loopTop15 = looper.looperTop15List
 
     return {
       randomTip,
       recommendArticleList,
       looperListRight,
-      oneTop,
-      loopTop15,
+      // loopTop15,
       userId
     }
   },

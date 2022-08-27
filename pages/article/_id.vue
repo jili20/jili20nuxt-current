@@ -119,7 +119,7 @@
         </div>
         <div class="md-hidden line-2"></div>
         <!-- 子组件 - 投放诗语 -->
-        <Patron v-bind:oneTop="oneTop" :isOpenPatron="isOpenPatron"
+        <Patron :isOpenPatron="isOpenPatron"
                 :addPatronData="addPatronData" @addPatron="addPatron" @openPatron="openPatron"
                 @handleClosePatron="handleClosePatron"/>
       </template>
@@ -143,7 +143,6 @@ export default {
   components: {
     Report,
     Award,
-    // Comment,
     Add,
     Aphorism,
     Recommend,
@@ -181,10 +180,6 @@ export default {
     // 轮播图 - 右边栏
     const {data: looper} = await app.$getArticleLooperList()
     const looperList = looper.looperListArticle
-    // 投放诗语-右则栏列表
-    const {data: one} = await app.$getOneTop()
-    const oneTop = one.oneTop
-
     return {
       routeId,
       userId,
@@ -193,8 +188,7 @@ export default {
       authorId,
       randomTip,
       recommendArticleList,
-      looperList,
-      oneTop
+      looperList
     }
   },
   data() {

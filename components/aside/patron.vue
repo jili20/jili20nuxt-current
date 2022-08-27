@@ -2,16 +2,8 @@
   <div class="patron-one-vip">
     <!-- 右则边栏 投放诗语人 -->
     <div class="aside" style="background-color: #FFFFFF;">
-      <el-divider>诗语作者</el-divider>
-      <div class="patron">
-        <div v-for="patron in oneTop" :key="patron.id">
-          <div style="text-align: center;">
-            <a :href="patron.link">
-              <img class="avatar" :src="patron.avatar" alt="" lazy/>
-            </a>
-          </div>
-        </div>
-      </div>
+      <el-divider>联系编辑</el-divider>
+      <img src="@/assets/img/patron/bing.jpg" alt="" style="width: 100%;">
       <div class="btn">
         <el-button class="el-icon-edit" style="font-size: 14px;" @click="openPatron"> 投放诗语</el-button>
         <br>
@@ -29,8 +21,8 @@
                  :model="addPatronData">
           <div class="ts">
             <p><b>🔳 温馨提示：</b> 经历网为只读网站，可搜索，全球可访问。</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;投放诗语，请您将内容发送至电子邮箱 908866805@qq.com，标题为《投放诗语》</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;或添加微信/QQ： 908866805 提交</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;投放诗语，请您将内容发送至电子邮箱 908866805@qq.com</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;或添加编辑的微信/QQ： 908866805 提交</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;您可以点击 <a href="/patron" title="查看所有投放的诗语"> 查看所有诗语</a></p>
           </div>
           <el-form-item label="头像" prop="avatar">
@@ -90,7 +82,7 @@
 <script>
 export default {
   name: "patron",
-  props: ["oneTop", "isOpenPatron", "addPatronData"],
+  props: ["isOpenPatron", "addPatronData"],
   data() {
     return {
       // 获取当前登录用户ID和头像 ( 方法参数上传入 store 才能获取 )
@@ -255,8 +247,9 @@ export default {
     }
 
     .ts {
-      padding:0 30px 50px;
-      p{
+      padding: 0 30px 50px;
+
+      p {
         line-height: 30px;
       }
     }
